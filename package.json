@@ -4,13 +4,19 @@
     "license": "MIT",
     "scripts": {
         "ng": "ng",
-        "start": "ng serve",
+        "serve": "ng serve",
+        "start": "node server.js",
         "build": "ng build --prod",
         "test": "ng test",
         "lint": "ng lint",
-        "e2e": "ng e2e"
+        "e2e": "ng e2e",
+        "postinstall": "ng build --aot --prod"
     },
     "private": true,
+    "engines": {
+        "node": "6.12.1",
+        "npm": "5.6.0"
+    },
     "dependencies": {
         "@angular/animations": "^5.2.0",
         "@angular/cdk": "^5.2.4",
@@ -26,7 +32,9 @@
         "angular-calendar": "^0.23.7",
         "axios": "^0.18.0",
         "core-js": "^2.4.1",
+        "express": "^4.16.3",
         "rxjs": "^5.5.6",
+        "typescript": "~2.5.3",
         "zone.js": "^0.8.19"
     },
     "devDependencies": {
@@ -37,6 +45,7 @@
         "@types/jasminewd2": "~2.0.2",
         "@types/node": "~6.0.60",
         "codelyzer": "^4.0.1",
+        "enhanced-resolve": "^3.3.0",
         "jasmine-core": "~2.8.0",
         "jasmine-spec-reporter": "~4.2.1",
         "karma": "~2.0.0",
