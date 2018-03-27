@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
     filterEventsByTeam() {
         this.filteredEvents = this.events.filter((event: CalendarEvent) => {
             // if no team is selected, just return everything
-            if (this.teamFilterValue === "") {
+            if (!this.teamFilterValue) {
                 return true;
             }
 
