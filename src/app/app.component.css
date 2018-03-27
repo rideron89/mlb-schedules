@@ -12,3 +12,20 @@
     font-size: 1.5em;
     padding-top: 15px;
 }
+
+.copyright {
+    color: #6b6b6b;
+    font-size: 0.9em;
+    font-style: italic;
+    padding: 0 25px;
+    margin: 25px 0 20px;
+}
+
+.copyright a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.copyright a:hover {
+    text-decoration: underline;
+}
