@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+    -moz-osx-font-smoothing: grayscale;
+    color: #303030;
+    font-family: Karla, Helvetica, Arial, sans-serif;
+    font-kerning: auto;
+    font-size: 18px;
+    height: 100vh;
+    line-height: 1.5;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.spacer {
+    flex: 1 1 0;
+}
+
+mat-form-field {
+    width: 250px;
+}
+
+mat-form-field mat-option {
+    height: 2.6em;
+}
