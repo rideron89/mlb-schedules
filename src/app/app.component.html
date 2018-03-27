@@ -9,32 +9,36 @@
         <mat-toolbar color="secondary">
             <mat-toolbar-row>
                 <span class="spacer"></span>
+                <span class="current-month">{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</span>
+                <span class="spacer"></span>
+            </mat-toolbar-row>
 
-                <span class="spacer">
+            <mat-toolbar-row class="mb-4">
+                <span class="spacer"></span>
+                <span>
                     <button mat-raised-button mwlCalendarPreviousView color="primary" [view]="view" [(viewDate)]="viewDate">Previous</button>
                     <button mat-raised-button mwlCalendarToday [(viewDate)]="viewDate">Today</button>
                     <button mat-raised-button mwlCalendarNextView color="primary" [view]="view" [(viewDate)]="viewDate">Next</button>
                 </span>
-
-                <span>
-                    <mat-form-field size="6">
-                        <mat-select [(value)]="teamFilterValue" (change)="filterEventsByTeam()" placeholder="Team Filter">
-                            <mat-option>---</mat-option>
-                            <mat-option *ngFor="let team of teamFilterOptions" [value]="team">{{ team }}</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </span>
+                <span class="spacer"></span>
             </mat-toolbar-row>
         </mat-toolbar>
     </header>
 
-    <main class="main-content">
-        <div *ngIf="events.length > 0">
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</mat-card-title>
-                </mat-card-header>
+    <div class="sub-menu container flex">
+        <div class="spacer"></div>
 
+        <mat-form-field size="6">
+            <mat-select [(value)]="teamFilterValue" (change)="filterEventsByTeam()" placeholder="Team Filter">
+                <mat-option>---</mat-option>
+                <mat-option *ngFor="let team of teamFilterOptions" [value]="team">{{ team }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <main class="main-content">
+        <div *ngIf="events.length > 0" class="container">
+            <mat-card>
                 <mat-card-content>
                     <mwl-calendar-month-view [viewDate]="viewDate" [events]="filteredEvents"></mwl-calendar-month-view>
                 </mat-card-content>

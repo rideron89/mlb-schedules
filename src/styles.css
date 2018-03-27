@@ -1,7 +1,21 @@
+html body a,
+html body button,
+html body div,
+html body h1,
+html body h2,
+html body h3,
+html body h4,
+html body h5,
+html body input,
+html body p,
+html body select,
+html body span {
+    font-family: Karla, Roboto, Helvetica, Arial, sans-serif;
+}
+
 html, body {
     -moz-osx-font-smoothing: grayscale;
     color: #303030;
-    font-family: Karla, Helvetica, Arial, sans-serif;
     font-kerning: auto;
     font-size: 18px;
     height: 100vh;
@@ -10,11 +24,29 @@ html, body {
     padding: 0;
 }
 
+.container {
+    margin: 0 auto;
+    max-width: 1600px;
+}
+
+.flex {
+    display: flex;
+}
+
+.mb-4 {
+    margin-bottom: 20px;
+}
+
 .spacer {
     flex: 1 1 0;
 }
 
+.cal-month-view .cal-events {
+    overflow-y: hidden;
+}
+
 mat-form-field {
+    max-width: 100%;
     width: 250px;
 }
 

@@ -3,3 +3,12 @@
     max-width: 100%;
     padding: 20px;
 }
+
+.sub-menu {
+    margin-top: 25px;
+}
+
+.current-month {
+    font-size: 1.5em;
+    padding-top: 15px;
+}
