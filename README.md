@@ -4,7 +4,7 @@ Angular application to view MLB game schedules by season or team.
 
 ## Demo
 
-[http://mlb-schedules.herokuapp.com](http://mlb-schedules.herokuapp.com/)
+[https://mlb-schedules.herokuapp.com](https://mlb-schedules.herokuapp.com/)
 
 ## Data Source
 
