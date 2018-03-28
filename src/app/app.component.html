@@ -13,12 +13,22 @@
                 <span class="spacer"></span>
             </mat-toolbar-row>
 
+            <mat-toolbar-row>
+                <span class="spacer"></span>
+                <span>
+                    <button mat-raised-button mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate">Previous</button>
+                    <button mat-raised-button mwlCalendarToday color="primary" [(viewDate)]="viewDate">Today</button>
+                    <button mat-raised-button mwlCalendarNextView [view]="view" [(viewDate)]="viewDate">Next</button>
+                </span>
+                <span class="spacer"></span>
+            </mat-toolbar-row>
+
             <mat-toolbar-row class="mb-4">
                 <span class="spacer"></span>
                 <span>
-                    <button mat-raised-button mwlCalendarPreviousView color="primary" [view]="view" [(viewDate)]="viewDate">Previous</button>
-                    <button mat-raised-button mwlCalendarToday [(viewDate)]="viewDate">Today</button>
-                    <button mat-raised-button mwlCalendarNextView color="primary" [view]="view" [(viewDate)]="viewDate">Next</button>
+                    <button mat-raised-button [class.mat-primary]="view === 'month'" (click)="view = 'month'">Month</button>
+                    <button mat-raised-button [class.mat-primary]="view === 'week'" (click)="view = 'week'">Week</button>
+                    <button mat-raised-button [class.mat-primary]="view === 'day'" (click)="view = 'day'">Day</button>
                 </span>
                 <span class="spacer"></span>
             </mat-toolbar-row>
@@ -39,8 +49,10 @@
     <main class="main-content">
         <div *ngIf="events.length > 0" class="container">
             <mat-card>
-                <mat-card-content>
-                    <mwl-calendar-month-view [viewDate]="viewDate" [events]="filteredEvents"></mwl-calendar-month-view>
+                <mat-card-content [ngSwitch]="view">
+                    <mwl-calendar-month-view *ngSwitchCase="'month'" [viewDate]="viewDate" [events]="filteredEvents"></mwl-calendar-month-view>
+                    <mwl-calendar-week-view *ngSwitchCase="'week'" [viewDate]="viewDate" [events]="filteredEvents"></mwl-calendar-week-view>
+                    <mwl-calendar-day-view *ngSwitchCase="'day'" [viewDate]="viewDate" [events]="filteredEvents"></mwl-calendar-day-view>
                 </mat-card-content>
             </mat-card>
 

@@ -88,9 +88,6 @@ export class AppComponent implements OnInit {
                     this.teamFilterOptions.push(game.visiting_team);
                 }
 
-                // sort the team filter options
-                this.teamFilterOptions.sort();
-
                 // add the event
                 this.events.push(<CalendarEvent>{
                     start: game.date,
@@ -102,6 +99,9 @@ export class AppComponent implements OnInit {
                     }
                 });
             });
+
+            // sort the team filter options
+            this.teamFilterOptions.sort();
 
             // make sure we setup the initial filter
             this.filterEventsByTeam();
